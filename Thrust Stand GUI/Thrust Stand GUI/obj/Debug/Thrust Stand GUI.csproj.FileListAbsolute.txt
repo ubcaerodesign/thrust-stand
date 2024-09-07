@@ -1,0 +1,10 @@
+C:\Users\cynth\source\repos\Thrust Stand GUI\Thrust Stand GUI\bin\Debug\Thrust Stand GUI.exe.config
+C:\Users\cynth\source\repos\Thrust Stand GUI\Thrust Stand GUI\bin\Debug\Thrust Stand GUI.exe
+C:\Users\cynth\source\repos\Thrust Stand GUI\Thrust Stand GUI\bin\Debug\Thrust Stand GUI.pdb
+C:\Users\cynth\source\repos\Thrust Stand GUI\Thrust Stand GUI\obj\Debug\Thrust Stand GUI.csproj.AssemblyReference.cache
+C:\Users\cynth\source\repos\Thrust Stand GUI\Thrust Stand GUI\obj\Debug\Thrust_Stand_GUI.Form1.resources
+C:\Users\cynth\source\repos\Thrust Stand GUI\Thrust Stand GUI\obj\Debug\Thrust_Stand_GUI.Properties.Resources.resources
+C:\Users\cynth\source\repos\Thrust Stand GUI\Thrust Stand GUI\obj\Debug\Thrust Stand GUI.csproj.GenerateResource.cache
+C:\Users\cynth\source\repos\Thrust Stand GUI\Thrust Stand GUI\obj\Debug\Thrust Stand GUI.csproj.CoreCompileInputs.cache
+C:\Users\cynth\source\repos\Thrust Stand GUI\Thrust Stand GUI\obj\Debug\Thrust Stand GUI.exe
+C:\Users\cynth\source\repos\Thrust Stand GUI\Thrust Stand GUI\obj\Debug\Thrust Stand GUI.pdb
