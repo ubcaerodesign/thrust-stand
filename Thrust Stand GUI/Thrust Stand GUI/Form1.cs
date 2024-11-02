@@ -26,15 +26,7 @@ namespace Thrust_Stand_GUI  //hello
             InitializeComponent();
             serialPort1.DataReceived += new SerialDataReceivedEventHandler(serialPort1_DataReceived); // added
 
-            try
-            {
-                serialPort1.Open();
-                Debug.WriteLine("Serial port opened.");
-            }
-            catch (UnauthorizedAccessException ex)
-            {
-                Debug.WriteLine($"Access to the port 'COM3' is denied!!");
-            }
+            
 
             // Initialize chart for Thrust vs. Throttle
             chartThrustVsThrottle.Series.Clear();  // clear everything
@@ -75,9 +67,9 @@ namespace Thrust_Stand_GUI  //hello
             SendCommand('R');
         }
 
+        string filePath;
         private void exportData_Click(object sender, EventArgs e)
         {
-            string filePath = @"C:\Users\cynth\source\repos\Thrust Stand GUI\throttle_thrust_data.csv"; // modify path as needed
             SaveDataToCSV(filePath);
         }
         private void SendCommand(char command)
@@ -151,11 +143,6 @@ namespace Thrust_Stand_GUI  //hello
             }
 
         }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         
 
         private void SaveDataToCSV(string fileName)
@@ -184,6 +171,58 @@ namespace Thrust_Stand_GUI  //hello
             {
                 MessageBox.Show("Error exporting data: " + ex.Message, "Export Error");
             }
+        }
+
+        private void buttonConnectSerialPort_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen == true)
+            {
+                serialPort1.Close();
+                serialPort1.Dispose();
+                buttonConnectSerialPort.Text = "Connect Serial";
+            }
+            else
+            {                
+                try
+                {
+                    serialPort1.Open();
+                    Debug.WriteLine("Serial port opened.");
+                    buttonConnectSerialPort.Text = "Disconnect Serial";
+                }
+                catch (UnauthorizedAccessException ex)
+                {
+                    Debug.WriteLine($"Access to the COM port is denied!!");
+                }
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            serialPort1.PortName = comboBoxCOMPorts.SelectedItem.ToString();
+        }
+
+        private void buttonSelectFileLocation_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog myDialogBox = new SaveFileDialog();
+            myDialogBox.InitialDirectory = @"C:\Users";
+            myDialogBox.ShowDialog();
+            filePath = myDialogBox.FileName.ToString() + ".csv";
+            textBoxFileName.Text = filePath;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            updateSerial();
+        }
+
+        private void updateSerial()
+        {
+            comboBoxCOMPorts.Items.Clear();
+            comboBoxCOMPorts.Items.AddRange(System.IO.Ports.SerialPort.GetPortNames());
+            if (comboBoxCOMPorts.Items.Count == 0)
+                comboBoxCOMPorts.Text = "No COM ports!";
+            else
+                comboBoxCOMPorts.SelectedIndex = 0;
         }
     }
 }
