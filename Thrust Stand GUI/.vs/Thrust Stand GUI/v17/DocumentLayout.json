@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\aqlin\\UBC_AeroDesign_localfolder\\thrust-stand\\Thrust Stand GUI\\",
+  "WorkspaceRootPath": "Z:\\Design Team\\thrust-stand\\Thrust Stand GUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C5568C56-55AD-4466-A0DC-83023550ADF1}|Thrust Stand GUI\\Thrust Stand GUI.csproj|c:\\users\\aqlin\\ubc_aerodesign_localfolder\\thrust-stand\\thrust stand gui\\thrust stand gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C5568C56-55AD-4466-A0DC-83023550ADF1}|Thrust Stand GUI\\Thrust Stand GUI.csproj|z:\\design team\\thrust-stand\\thrust stand gui\\thrust stand gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5568C56-55AD-4466-A0DC-83023550ADF1}|Thrust Stand GUI\\Thrust Stand GUI.csproj|solutionrelative:thrust stand gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5568C56-55AD-4466-A0DC-83023550ADF1}|Thrust Stand GUI\\Thrust Stand GUI.csproj|C:\\Users\\aqlin\\UBC_AeroDesign_localfolder\\thrust-stand\\Thrust Stand GUI\\thrust stand gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C5568C56-55AD-4466-A0DC-83023550ADF1}|Thrust Stand GUI\\Thrust Stand GUI.csproj|Z:\\Design Team\\thrust-stand\\Thrust Stand GUI\\thrust stand gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C5568C56-55AD-4466-A0DC-83023550ADF1}|Thrust Stand GUI\\Thrust Stand GUI.csproj|solutionrelative:thrust stand gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -32,11 +32,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\aqlin\\UBC_AeroDesign_localfolder\\thrust-stand\\Thrust Stand GUI\\Thrust Stand GUI\\Form1.cs",
+              "DocumentMoniker": "Z:\\Design Team\\thrust-stand\\Thrust Stand GUI\\Thrust Stand GUI\\Form1.cs",
               "RelativeDocumentMoniker": "Thrust Stand GUI\\Form1.cs",
-              "ToolTip": "C:\\Users\\aqlin\\UBC_AeroDesign_localfolder\\thrust-stand\\Thrust Stand GUI\\Thrust Stand GUI\\Form1.cs",
+              "ToolTip": "Z:\\Design Team\\thrust-stand\\Thrust Stand GUI\\Thrust Stand GUI\\Form1.cs",
               "RelativeToolTip": "Thrust Stand GUI\\Form1.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAIAywJwAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAiwFwAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-05T18:57:32.358Z",
               "EditorCaption": ""
@@ -45,13 +45,11 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\aqlin\\UBC_AeroDesign_localfolder\\thrust-stand\\Thrust Stand GUI\\Thrust Stand GUI\\Form1.cs",
+              "DocumentMoniker": "Z:\\Design Team\\thrust-stand\\Thrust Stand GUI\\Thrust Stand GUI\\Form1.cs",
               "RelativeDocumentMoniker": "Thrust Stand GUI\\Form1.cs",
               "ToolTip": "C:\\Users\\aqlin\\UBC_AeroDesign_localfolder\\thrust-stand\\Thrust Stand GUI\\Thrust Stand GUI\\Form1.cs [Design]",
-              "RelativeToolTip": "Thrust Stand GUI\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T18:44:21.325Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-07-05T18:44:21.325Z"
             }
           ]
         }

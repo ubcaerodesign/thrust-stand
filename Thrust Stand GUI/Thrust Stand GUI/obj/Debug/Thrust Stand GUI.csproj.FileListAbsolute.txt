@@ -18,3 +18,13 @@ C:\Users\aqlin\UBC_AeroDesign_localfolder\thrust-stand\Thrust Stand GUI\Thrust S
 C:\Users\aqlin\UBC_AeroDesign_localfolder\thrust-stand\Thrust Stand GUI\Thrust Stand GUI\obj\Debug\Thrust Stand GUI.csproj.CoreCompileInputs.cache
 C:\Users\aqlin\UBC_AeroDesign_localfolder\thrust-stand\Thrust Stand GUI\Thrust Stand GUI\obj\Debug\Thrust Stand GUI.exe
 C:\Users\aqlin\UBC_AeroDesign_localfolder\thrust-stand\Thrust Stand GUI\Thrust Stand GUI\obj\Debug\Thrust Stand GUI.pdb
+Z:\Design Team\thrust-stand\Thrust Stand GUI\Thrust Stand GUI\bin\Debug\Thrust Stand GUI.exe.config
+Z:\Design Team\thrust-stand\Thrust Stand GUI\Thrust Stand GUI\bin\Debug\Thrust Stand GUI.exe
+Z:\Design Team\thrust-stand\Thrust Stand GUI\Thrust Stand GUI\obj\Debug\Thrust Stand GUI.csproj.AssemblyReference.cache
+Z:\Design Team\thrust-stand\Thrust Stand GUI\Thrust Stand GUI\obj\Debug\Thrust_Stand_GUI.Form1.resources
+Z:\Design Team\thrust-stand\Thrust Stand GUI\Thrust Stand GUI\obj\Debug\Thrust_Stand_GUI.Properties.Resources.resources
+Z:\Design Team\thrust-stand\Thrust Stand GUI\Thrust Stand GUI\obj\Debug\Thrust Stand GUI.csproj.GenerateResource.cache
+Z:\Design Team\thrust-stand\Thrust Stand GUI\Thrust Stand GUI\obj\Debug\Thrust Stand GUI.csproj.CoreCompileInputs.cache
+Z:\Design Team\thrust-stand\Thrust Stand GUI\Thrust Stand GUI\obj\Debug\Thrust Stand GUI.exe
+Z:\Design Team\thrust-stand\Thrust Stand GUI\Thrust Stand GUI\obj\Debug\Thrust Stand GUI.pdb
+Z:\Design Team\thrust-stand\Thrust Stand GUI\Thrust Stand GUI\bin\Debug\Thrust Stand GUI.pdb

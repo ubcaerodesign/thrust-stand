@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.IO;
 
-namespace Thrust_Stand_GUI  //hello
+namespace Thrust_Stand_GUI
 {
     public partial class Form1 : Form
     {
@@ -20,6 +20,9 @@ namespace Thrust_Stand_GUI  //hello
         // public delegate void d1(string indata);
         // private static int counter;
         List<string> throttleThrustData = new List<string>(); // Store the throttle and thrust values
+
+        bool testEnabled = false;
+        DateTime lastCmd = DateTime.Now;
 
         public Form1()
         {
@@ -51,20 +54,28 @@ namespace Thrust_Stand_GUI  //hello
 
         private void startTest_Click(object sender, EventArgs e)
         {
-            // Send command to arduino to start test
-            SendCommand('S');
+            // enable the throttle slider to control the throttle
+            testEnabled = true;
+        }
+
+        private int throttle = 0;
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            throttle++;
+            SendCommand(throttle.ToString());
         }
 
         private void endTest_Click(object sender, EventArgs e)
         {
             // Send command to arduino to end test
-            SendCommand('E');
+            SendCommand("E");
         }
 
         private void recalibrate_Click(object sender, EventArgs e)
         {
             // Send command to arduino to recalibrate
-            SendCommand('R');
+            SendCommand("R");
         }
 
         string filePath;
@@ -72,13 +83,14 @@ namespace Thrust_Stand_GUI  //hello
         {
             SaveDataToCSV(filePath);
         }
-        private void SendCommand(char command)
+
+        private void SendCommand(String command)
         {
             try
             {
                 if (serialPort1.IsOpen)
                 {
-                    serialPort1.Write(command.ToString());
+                    serialPort1.Write(command);
                     Debug.WriteLine($"Sent command: {command}");
                 }
                 else
@@ -109,37 +121,21 @@ namespace Thrust_Stand_GUI  //hello
         {
             textBox1.AppendText(indata + Environment.NewLine); // Append received data to text box
 
-            // Split data based on a space or tab (idk what kinda spacing it is)
-            string[] parts = indata.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+            double thrust;
 
-            // Check for two parts (throttle and thrust)
-            if (parts.Length == 2)
+            bool isThrustNumeric = double.TryParse(indata, out thrust);
+
+            // Make sure both parts are the numerical values we want
+            if (isThrustNumeric)
             {
+                // Store the throttle and thrust in a string (comma-separated for CSV)
+                throttleThrustData.Add(throttle.ToString() + "," + indata);
 
-                double throttle;
-                double thrust;
+                // Display thrust value in textBox2
+                textBox2.Text = $"Thrust: {thrust} lbs";
 
-                bool isThrottleNumeric = double.TryParse(parts[0], out throttle);
-                bool isThrustNumeric = double.TryParse(parts[1], out thrust);
-
-                // Make sure both parts are the numerical values we want
-                if (isThrottleNumeric && isThrustNumeric)
-                {
-
-                    // Store the throttle and thrust in a string (comma-separated for CSV)
-                    throttleThrustData.Add(parts[0] + "," + parts[1]);
-
-                    // Convert string to numerical value
-                    if (double.TryParse(parts[0], out throttle) && double.TryParse(parts[1], out thrust))
-                    {
-                        // Display thrust value in textBox2
-                        textBox2.Text = $"Thrust: {thrust} lbs";
-
-                        // Add data point to the chart (throttle vs thrust)
-                        chartThrustVsThrottle.Series[0].Points.AddXY(throttle, thrust);
-                    }
-
-                }
+                // Add data point to the chart (throttle vs thrust)
+                chartThrustVsThrottle.Series[0].Points.AddXY(throttle, thrust);
             }
 
         }
@@ -223,6 +219,19 @@ namespace Thrust_Stand_GUI  //hello
                 comboBoxCOMPorts.Text = "No COM ports!";
             else
                 comboBoxCOMPorts.SelectedIndex = 0;
+        }
+
+        private void trackBar1_ValueChanged(object sender, EventArgs e)
+        {
+            if (testEnabled)
+            {
+                if ((DateTime.Now - lastCmd).TotalSeconds >= 1)
+                {
+                    lastCmd = DateTime.Now;
+                    Debug.Print("HERE");
+                    SendCommand(throttleSlider.Value.ToString());
+                }
+            }
         }
     }
 }
