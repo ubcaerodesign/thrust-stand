@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.startTest = new System.Windows.Forms.Button();
             this.endTest = new System.Windows.Forms.Button();
             this.recalibrate = new System.Windows.Forms.Button();
@@ -124,17 +124,17 @@
             // 
             // chartThrustVsThrottle
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartThrustVsThrottle.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartThrustVsThrottle.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartThrustVsThrottle.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartThrustVsThrottle.Legends.Add(legend2);
             this.chartThrustVsThrottle.Location = new System.Drawing.Point(247, 128);
             this.chartThrustVsThrottle.Margin = new System.Windows.Forms.Padding(2);
             this.chartThrustVsThrottle.Name = "chartThrustVsThrottle";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartThrustVsThrottle.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartThrustVsThrottle.Series.Add(series2);
             this.chartThrustVsThrottle.Size = new System.Drawing.Size(469, 268);
             this.chartThrustVsThrottle.TabIndex = 6;
             this.chartThrustVsThrottle.Text = "chart1";
@@ -201,7 +201,7 @@
             this.throttleSlider.Size = new System.Drawing.Size(274, 45);
             this.throttleSlider.TabIndex = 12;
             this.throttleSlider.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.throttleSlider.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
+            this.throttleSlider.MouseUp += new System.Windows.Forms.MouseEventHandler(this.throttleSlider_MouseUp);
             // 
             // Form1
             // 

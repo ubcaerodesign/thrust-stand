@@ -70,9 +70,6 @@ void loop() {
     // read the incoming byte:
     receivedData = Serial.readStringUntil('\n');
     receivedData.trim();
-    Serial.println("TEST");
-    Serial.println("a");
-    Serial.println(receivedData);
     // R for reset
     if (receivedData == "R") {
       startESC();
@@ -83,11 +80,8 @@ void loop() {
       throttle = 0;
       setThrottle();
     } else {
-      Serial.println("b");
       int receivedThrottle = receivedData.toInt();
-      Serial.println("c");
       if (receivedThrottle >= 1 || receivedThrottle <= 100) {
-        Serial.println("d");
         throttle = receivedThrottle;
         setThrottle();
         lastWrite = millis();
@@ -99,22 +93,23 @@ void loop() {
   // if throttle is not 0 and if 30 second timeout has not been reached
   if (throttle >= 0 && lastWrite + 30000 > millis()) {
     // waits one second after the esc write to return thrust information
-    if (millis() / 1000 > 1 && !responded) {
+    if ((lastWrite - millis()) / 1000 > 1 && !responded) {
       double grams;
       grams = scale.get_units() * 0.0229308641975309;
       //Serial.println(grams);
       responded = true;
 
       // Read differential voltage (e.g., between AIN0 and AIN1)
-      int16_t adcValue = ADS.readADC_Differential_0_1();
+      //int16_t adcValue = ADS.readADC_Differential_0_1();
 
       // Convert ADC value to voltage (based on gain and resolution)
-      float voltage = adcValue * (4.096 / 32768.0); // ±4.096V range, 16-bit resolution
+      //float voltage = adcValue * (4.096 / 32768.0); // ±4.096V range, 16-bit resolution
 
       // Calculate current using Ohm's Law
-      float current = voltage / shuntResistance;
+      //float current = voltage / shuntResistance;
 
-      Serial.println("Thrust: " + String(grams) + " Current: " + String(current));
+      //Serial.println("Thrust: " + String(grams) + " Current: " + String(current));
+      Serial.println("Thrust: " + String(grams));
     }
   } else {
     ESC.writeMicroseconds(1000);

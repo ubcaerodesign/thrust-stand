@@ -60,12 +60,6 @@ namespace Thrust_Stand_GUI
 
         private int throttle = 0;
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            throttle++;
-            SendCommand(throttle.ToString());
-        }
-
         private void endTest_Click(object sender, EventArgs e)
         {
             // Send command to arduino to end test
@@ -90,7 +84,7 @@ namespace Thrust_Stand_GUI
             {
                 if (serialPort1.IsOpen)
                 {
-                    serialPort1.Write(command);
+                    serialPort1.Write(command + "\n");
                     Debug.WriteLine($"Sent command: {command}");
                 }
                 else
@@ -221,15 +215,15 @@ namespace Thrust_Stand_GUI
                 comboBoxCOMPorts.SelectedIndex = 0;
         }
 
-        private void trackBar1_ValueChanged(object sender, EventArgs e)
+        private void throttleSlider_MouseUp(object sender, MouseEventArgs e)
         {
             if (testEnabled)
             {
                 if ((DateTime.Now - lastCmd).TotalSeconds >= 1)
                 {
                     lastCmd = DateTime.Now;
-                    Debug.Print("HERE");
                     SendCommand(throttleSlider.Value.ToString());
+                    throttle = throttleSlider.Value;
                 }
             }
         }
